@@ -11,8 +11,25 @@ const formatValue = (input: InputValue) => {
 
     else if (typeof input === "boolean") {
         return !input
+    } else {
+        return input;
     }
 }
-console.log(formatValue('hello'));
-console.log(formatValue(5));
-console.log(formatValue(true));
+
+
+
+// Problem 2
+type inputType = string | any[];
+
+const getLength = (input: inputType):number => {
+    if (typeof input === "string") {
+        return input.length;
+    }
+    else if (Array.isArray(input)) {
+        return input.length;
+    } 
+        return 0
+}
+
+console.log(getLength('typescript'));
+console.log(getLength([10, 20, 30, 40]));
