@@ -62,14 +62,28 @@ type User = {
     isActive: boolean;
 };
 
-const filterActiveUsers = (user:User[]): User[] => {
-return user.filter(user =>user.isActive)
+const filterActiveUsers = (user: User[]): User[] => {
+    return user.filter(user => user.isActive)
 }
 
-const users = [
-  { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
-  { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
-  { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
-];
+// problem 6
+type Book = {
+    title: string;
+    author: string;
+    publishedYear: number;
+    isAvailable: boolean;
+}
 
-console.log(filterActiveUsers(users));
+const printBookDetails = (books: Book): void => {
+    const availability = books.isAvailable ? "Yes" : "No";
+    console.log(`Title: ${books.title}, Author: ${books.author}, Published: ${books.publishedYear}, Available: ${availability}`);
+}
+
+const myBook: Book = {
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    publishedYear: 1925,
+    isAvailable: true,
+};
+
+printBookDetails(myBook);
