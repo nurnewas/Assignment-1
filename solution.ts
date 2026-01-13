@@ -54,11 +54,22 @@ const filterByRating = (items: Item[]): Item[] => {
     return items.filter(item => item.rating >= 4);
 }
 
+// problem 5
+type User = {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean;
+};
 
-const books = [
-    { title: 'Book A', rating: 4.5 },
-    { title: 'Book B', rating: 3.2 },
-    { title: 'Book C', rating: 5.0 },
+const filterActiveUsers = (user:User[]): User[] => {
+return user.filter(user =>user.isActive)
+}
+
+const users = [
+  { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
+  { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
+  { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
 ];
 
-console.log(filterByRating(books));
+console.log(filterActiveUsers(users));
