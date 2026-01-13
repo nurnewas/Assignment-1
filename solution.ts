@@ -79,11 +79,26 @@ const printBookDetails = (books: Book): void => {
     console.log(`Title: ${books.title}, Author: ${books.author}, Published: ${books.publishedYear}, Available: ${availability}`);
 }
 
-const myBook: Book = {
-    title: 'The Great Gatsby',
-    author: 'F. Scott Fitzgerald',
-    publishedYear: 1925,
-    isAvailable: true,
-};
+// problem 7
+type ArrNum = (string | number)[]
+const getUniqueValues = (arr1: ArrNum, arr2: ArrNum): ArrNum => {
+    const result: (string | number)[] = [];
 
-printBookDetails(myBook);
+    for (const item of arr1) {
+        if (!result.includes(item)) {
+            result.push(item);
+        }
+    }
+
+    for (const item of arr2) {
+        if (!result.includes(item)) {
+            result.push(item);
+        }
+    }
+
+    return result;
+}
+
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+console.log(getUniqueValues(array1, array2));
