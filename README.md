@@ -6,8 +6,8 @@ TypeScript-এ interface আর type দুইটাই object এর structure 
 আর type একটু বেশি powerful। type দিয়ে union (|) আর intersection (&) টাইপ বানানো যায়। কিন্তু type কে class implement করতে পারে না।
 
 সহজভাবে বললে
-👉 object / class → interface
-👉 complex টাইপ → type
+ object / class → interface
+ complex টাইপ → type
 
 ```ts
 interface User {
@@ -34,5 +34,5 @@ function errorMsg(): never {
 }
 ```
 
-✍️ সংক্ষেপে:
+ সংক্ষেপে:
 any avoid করা ভালো, unknown safe, আর never rare case এ ব্যবহার হয়।
